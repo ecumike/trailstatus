@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Ecumike's Trail Status</title>
+		<link href="styles.css" rel="stylesheet">
+		
+		<script>
+			var trails = [
+				{id: 3778, label: 'Crabtree'},
+				{id: 45958, label: 'Forest Ridge'},
+				{id: 45959, label: 'Green Hills'},
+				{id: 10922, label: 'Harris'},
+				{id: 3779, label: 'RTP'},
+				{id: 41867, label: 'Williamson Preserve'},
+			];
+		</script>
+		
+	</head>
+	
+	<body>
+		<div id="trail-list"></div>
+		
+		<script>
+			var style = 'https://ecumike.github.io/trailstatus/styles.css';
+			(function () {
+				function injectList(htmlStr) {
+					var fragment = document.createDocumentFragment(),
+						$elem = document.createElement('div');
+						$elem.innerHTML = htmlStr;
+					while($elem.firstChild) {
+						fragment.appendChild($elem.firstChild);
+					}
+					document.getElementById('trail-list').appendChild(fragment);
+				}
+				var html = '';
+				trails.forEach(function(obj) {
+					html += '<div class="trail-item"><div class="TrailforksWidgetRegionStatus" data-w="30px" data-h="24px" data-rid="'+obj.id+'" data-activitytype="1" data-status="1" data-st="0" data-ct="0" data-date="0"></div><div>'+obj.label+'</div></div>';
+				});
+				injectList(html);
+			})();
+		</script>
+		<script src="https://es.pinkbike.org/326/sprt/j/trailforks/iframeResizer.min.js"></script>
+		<script src="https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js"></script>
+	</body>
+</html>

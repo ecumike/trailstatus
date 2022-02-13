@@ -1,0 +1,32 @@
+
+html {
+	font-family: "Arial", sans-serif;
+	font-size: 20px;
+	color: #222;
+}
+
+.trail-item {
+	border-top: 1px solid #ccc;
+	display: flex;
+	height: 22px;
+	list-style: none;
+	overflow: hidden;
+	padding: 8px 0;
+}
+.trail-item:first-of-type {
+	border: none;
+}
+iframe {
+	border: none;
+	height: 22px;
+	overflow: hidden;
+	width: 30px;
+}
+
+.status {
+	font-size: 20px !important;
+}
+
+.TrailforksWidgetRegionStatus {
+	transform: translate3d(0,-2px,0);
+}
