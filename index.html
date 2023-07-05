@@ -23,7 +23,6 @@
 		<div id="trail-list"></div>
 		
 		<script>
-			var style = 'https://ecumike.github.io/trailstatus/styles.css';
 			(function () {
 				function injectList(htmlStr) {
 					var fragment = document.createDocumentFragment(),
@@ -36,7 +35,7 @@
 				}
 				var html = '';
 				trails.forEach(function(obj) {
-					html += '<div class="trail-item"><div class="TrailforksWidgetRegionStatus" data-w="30px" data-h="24px" data-rid="'+obj.id+'" data-activitytype="1" data-status="1" data-st="0" data-ct="0" data-date="0"></div><div>'+obj.label+'</div></div>';
+					html += '<div class="trail-item"><div class="TrailforksWidgetRegionStatus" data-w="30px" data-h="24px" data-rid="'+obj.id+'" data-activitytype="1" data-status="1" data-st="0" data-ct="0" data-date="0" data-style="https://ecumike.github.io/trailstatus/styles.css"></div><div>'+obj.label+'</div></div>';
 				});
 				injectList(html);
 			})();
